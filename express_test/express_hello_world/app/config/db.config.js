@@ -1,5 +1,5 @@
 module.exports = {
-    HOST: "192.168.0.150",
+    HOST: "192.168.0.174",
     USER: "admin",
     PASSWORD: "docker",
     DB: "world",
