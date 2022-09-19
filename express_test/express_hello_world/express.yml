@@ -1,0 +1,15 @@
+---
+
+- hosts: ansible
+
+  tasks:
+  - name: create docker image
+    command: docker build -t express:crud .
+    args:
+     chdir: /opt/docker/crud/express/express_hello_world
+
+  - name: create tag to push image onto dockerhub
+    command: docker tag express:crud jawa317/express:windows
+
+  - name: push docker image
+    command: docker push jawa317/express:windows
