@@ -1,0 +1,14 @@
+---
+- hosts: ansible
+
+  tasks:
+  - name: create docker image
+    command: docker build -t postgresdb:crud .
+    args:
+     chdir: /opt/docker/crud/postgres
+
+  - name: create tag to push image onto dockerhub
+    command: docker tag postgresdb:crud jawa317/postgresdb:windows
+
+  - name: push docker image
+    command: docker push jawa317/postgresdb:windows
