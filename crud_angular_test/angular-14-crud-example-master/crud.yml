@@ -8,7 +8,7 @@
      chdir: /opt/docker/crud
 
   - name: create tag to push image onto dockerhub
-    command: docker tag regapp:crud jawa317/regapp:windows
+    command: docker tag regapp:crud jawa317/frontend:windows
 
   - name: push docker image
-    command: docker push jawa317/regapp:windows
+    command: docker push jawa317/frontend:windows
