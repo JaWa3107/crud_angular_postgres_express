@@ -1,0 +1,14 @@
+---
+- hosts: ansible
+
+  tasks:
+  - name: create docker image
+    command: docker build -t regapp:crud .
+    args:
+     chdir: /opt/docker/crud
+
+  - name: create tag to push image onto dockerhub
+    command: docker tag regapp:crud jawa317/regapp:windows
+
+  - name: push docker image
+    command: docker push jawa317/regapp:windows
