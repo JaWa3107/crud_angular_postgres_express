@@ -1,0 +1,18 @@
+---
+- hosts: dockerhost
+
+  tasks:
+  - name: stop existing container
+    command: docker stop backend-server
+    ignore_errors: yes
+
+  - name: remove the container
+    command: docker rm backend-server
+    ignore_errors: yes
+
+  - name: remove image
+    command: docker rmi jawa317/backend:KundenTag
+    ignore_errors: yes
+
+  - name: create container
+    command: docker run -d --name backend-server -p 8080:8080 jawa317/backend:KundenTag
