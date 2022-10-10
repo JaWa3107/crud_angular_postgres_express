@@ -3,12 +3,12 @@
 
   tasks:
   - name: create docker image
-    command: docker build -t regapp:crud .
+    command: docker build -t frontend:KundenTag .
     args:
      chdir: /opt/docker/crud
 
   - name: create tag to push image onto dockerhub
-    command: docker tag regapp:crud jawa317/frontend:windows
+    command: docker tag frontend:KundenTag jawa317/frontend:KundenTag
 
   - name: push docker image
-    command: docker push jawa317/frontend:windows
+    command: docker push jawa317/frontend:KundenTag
