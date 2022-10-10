@@ -3,12 +3,12 @@
 
   tasks:
   - name: create docker image
-    command: docker build -t postgresdb:crud .
+    command: docker build -t postgresdb:KundenTag .
     args:
      chdir: /opt/docker/crud/postgres
 
   - name: create tag to push image onto dockerhub
-    command: docker tag postgresdb:crud jawa317/postgresdb:windows
+    command: docker tag postgresdb:KundenTag jawa317/postgresdb:KundenTag
 
   - name: push docker image
-    command: docker push jawa317/postgresdb:windows
+    command: docker push jawa317/postgresdb:KundenTag
